@@ -4,6 +4,7 @@ import MovieCard from './components/MovieCard'
 import Home from './pages/Home'
 import { Routes,Route } from 'react-router-dom'
 import Favourites from './pages/Favourites'
+import ToWatch from './pages/ToWatch'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/favourites" element={<Favourites/>}/>
+      <Route path="/towatch" element={<ToWatch/>}/>
     </Routes>
     </main>
   )
