@@ -12,7 +12,7 @@ return(
     
     <img src={movie.url}/>
     <div className="movie-overlay">
-        <button className="favourite-btn" onClick={FavouriteButton}>FF</button>
+        <button className="favourite-btn" onClick={FavouriteButton}>♡</button>
     </div>
 </div>
 <div className="movie-info">
