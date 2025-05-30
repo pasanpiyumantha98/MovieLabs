@@ -1,4 +1,4 @@
-export default MovieCard
+import '../css/MovieCard.css'
 
 function MovieCard ({movie}) {
 
@@ -23,3 +23,5 @@ return(
 )
 
 }
+
+export default MovieCard

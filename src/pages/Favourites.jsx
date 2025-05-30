@@ -1,4 +1,4 @@
-
+import '../css/Favorites.css'
 
 function Favourites () 
 {
