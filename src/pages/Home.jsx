@@ -29,21 +29,23 @@ loadMovies();
 
 
 
-async function FormSubmit()
-{
+async function FormSubmit (e){
+    e.preventDefault();
+    if (!searchtext.trim()) return
+    if (loading) return
+
     setLoading(true)
-   try{
-    const SearchResults = await SearchMovies(searchtext.trim())
-    SetMovies(SearchResults)
-    setError(null)
-   } catch (err){
-    setError("Cant Load")
-   } finally{
-    setLoading(false)
-
-   }
-
-}
+    try {
+        const searchResults = await SearchMovies(searchtext)
+        SetMovies(searchResults)
+        setError(null)
+    } catch (err) {
+        console.log(err)
+        setError("Failed to search movies...")
+    } finally {
+        setLoading(false)
+    }
+  };
 
 
 return(
