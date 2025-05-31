@@ -1,14 +1,33 @@
 import MovieCard from "../components/MovieCard"
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import '../css/home.css'
+import { PopMovies,SearchMovies } from "../services/api"
 
 function Home () {
 
-const movies = [{id:1, title:"Harry Potter", release_date:"2025-05-30"},
-          {id:2, title:"Harry Potter 2", release_date:"2026-05-30"},
-          {id:3, title:"Harry Potter 3", release_date:"2027-05-30"}]
+const [movies,SetMovies] = useState([])
+const [searchtext, setSearchtext] = useState("")     
+const [loading, setLoading] = useState(true) 
+const [error, setError] = useState(null)     
 
-const [searchtext, setSearchtext] = useState("")         
+useEffect(()=>{
+  
+  async function loadMovies(){
+    try{
+        const popMovies= await PopMovies();
+        SetMovies(popMovies)
+
+    }catch(err){
+        console.log(err)
+        setError(err)
+    }finally{
+        setLoading(false)
+    }
+}
+loadMovies();
+},[])
+
+
 
 function FormSubmit()
 {
