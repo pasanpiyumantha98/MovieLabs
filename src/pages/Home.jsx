@@ -29,9 +29,20 @@ loadMovies();
 
 
 
-function FormSubmit()
+async function FormSubmit()
 {
-    alert(searchtext)
+   try{
+    setLoading(true)
+    const SearchResults = await SearchMovies(searchtext)
+    SetMovies(SearchResults)
+    setError(null)
+   } catch (err){
+    setError(err)
+   } finally{
+    setLoading(false)
+
+   }
+
 }
 
 
