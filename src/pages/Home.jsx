@@ -31,13 +31,13 @@ loadMovies();
 
 async function FormSubmit()
 {
-   try{
     setLoading(true)
-    const SearchResults = await SearchMovies(searchtext)
+   try{
+    const SearchResults = await SearchMovies(searchtext.trim())
     SetMovies(SearchResults)
     setError(null)
    } catch (err){
-    setError(err)
+    setError("Cant Load")
    } finally{
     setLoading(false)
 

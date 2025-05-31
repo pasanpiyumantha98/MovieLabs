@@ -13,7 +13,7 @@ return data.results;
 
 export async function SearchMovies(query)
 {
-const response = await fetch(`${Base_URL}/search/?api_key=${API_Key}&query=${encodeURIComponent(query)}`)
+const response = await fetch(`${Base_URL}/search/movie?api_key=${API_Key}&query=${encodeURIComponent(query)}`)
 const data = await response.json()
 return data.results;  
 }
