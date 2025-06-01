@@ -21,6 +21,7 @@ return(
     <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
     <div className="movie-overlay">
         <button className={`favorite-btn ${favorites ? "active" : ""}`} onClick={FavouriteButton}>♡</button>
+         <button className={`watched-btn ${favorites ? "active" : ""}`} onClick={FavouriteButton}>✔</button>
     </div>
 </div>
 <div className="movie-info">

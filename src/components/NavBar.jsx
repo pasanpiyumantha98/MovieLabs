@@ -12,7 +12,8 @@ return(
         <div className="navbar-links">
             <Link to="/">Home</Link>
             <Link to="/favourites">Favourites</Link>
-            <Link to="/towatch">To Watch</Link>
+            <Link to="/watched">Watched</Link>
+            <Link to="/support">Support</Link>
         </div>
     </nav>
 )
