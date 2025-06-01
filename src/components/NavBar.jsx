@@ -11,7 +11,7 @@ return(
         </div>
         <div className="navbar-links">
             <Link to="/">Home</Link>
-            <Link to="/favourites">Favourites</Link>
+            <Link to="/favourites">Favorites</Link>
             <Link to="/watched">Watched</Link>
             <Link to="/support">Support</Link>
         </div>
