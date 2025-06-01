@@ -5,7 +5,7 @@ function ToWatch()
 return(
 <>
 
-<p>This is the To Watch Page.</p>
+<p>This is the page belongs to already watched movies.</p>
 
 </>
 )
