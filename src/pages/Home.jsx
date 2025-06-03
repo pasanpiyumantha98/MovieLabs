@@ -2,6 +2,7 @@ import MovieCard from "../components/MovieCard"
 import { useState,useEffect } from "react"
 import '../css/home.css'
 import { PopMovies,SearchMovies } from "../services/api"
+import NavBar from "../components/NavBar"
 
 function Home () {
 
@@ -49,8 +50,9 @@ async function FormSubmit (e){
 
 
 return(
-
+    
     <div className="home">
+        <NavBar/>
         <form onSubmit={FormSubmit} className="search-form">
             <input type="text" value={searchtext} onChange={(e)=> setSearchtext(e.target.value)} className="search-input" placeholder="Search for movies"></input>
             <button type="submit" className="search-button">Search</button>

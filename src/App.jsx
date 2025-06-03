@@ -12,14 +12,14 @@ function App() {
 
   return (
     <MovieProvider>
-    <NavBar/>
+   
     <main className="main-content">
     <Routes>
       <Route path="/home" element={<Home/>}/>
       <Route path="/favourites" element={<Favourites/>}/>
       <Route path="/watched" element={<ToWatch/>}/>
       <Route path="/support" element={<Help/>}/>
-      <Route path="/login" element={<Login/>}/>
+      <Route path="/" element={<Login/>}/>
 
     </Routes>
     </main>
