@@ -2,6 +2,7 @@ import MovieCard from "../components/MovieCard"
 import { useState,useEffect } from "react"
 import '../css/Login.css'
 import { PopMovies,SearchMovies } from "../services/api"
+import Logo '../'
 
 function Login () {
 
