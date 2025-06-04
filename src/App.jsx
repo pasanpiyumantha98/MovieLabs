@@ -7,6 +7,7 @@ import Help from './pages/Help'
 import NavBar from './components/NavBar'
 import { MovieProvider } from './contexts/moviecontext'
 import Login from './pages/Login'
+import Signup from './pages/Signup'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Route path="/watched" element={<ToWatch/>}/>
       <Route path="/support" element={<Help/>}/>
       <Route path="/" element={<Login/>}/>
+       <Route path="/signup" element={<Signup/>}/>
 
     </Routes>
     </main>

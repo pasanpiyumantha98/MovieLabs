@@ -2,7 +2,7 @@ import '../css/Login.css'
 import logo from '../assets/logo.png'
 import { Link } from 'react-router-dom'
 
-function Login () {
+function Signup () {
 
 
 
@@ -18,10 +18,12 @@ return(
       <form action="https://example.com/support" method="POST" autocomplete="on" novalidate>
     <label for="name" class="required">Username</label>
     <input id="username" name="name" type="text"  autocomplete="name" />
+     <label for="name" class="required">Email</label>
+    <input id="username" name="name" type="text"  autocomplete="name" />
     <label for="email" class="required">Password</label>
     <input id="pass" name="password" type="password" required placeholder="" />
     
-   <center> <button type="submit">login</button> <Link to="/signup"> <button >Not Registered?</button></Link></center>
+   <center> <button type="submit">login</button>   <Link to="/"><button>Already Registered?</button></Link></center>
   </form>
     </div>
   </div>
@@ -32,4 +34,4 @@ return(
 
 )
 }
-export default Login
+export default Signup
