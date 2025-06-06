@@ -41,13 +41,13 @@ return(
     <br></br>
       <form  autocomplete="on" novalidate>
     <label for="name" class="required">Username</label>
-    <input id="username" name="name" type="text"  autocomplete="name" value={uname} onChange={(e)=>setUname(e.target.value)}/>
+    <input id="username" name="name" type="text"  autocomplete="name" value={uname} onChange={(e)=>setUname(e.target.value)} required/>
      <label for="name" class="required">Email</label>
-    <input id="username" name="name" type="text"  autocomplete="name" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+    <input id="username" name="name" type="text"  autocomplete="name" value={email} onChange={(e)=>setEmail(e.target.value)} required/>
     <label for="email" class="required">Password</label>
-    <input id="pass" name="password" type="password" required placeholder="" value={pass} onChange={(e)=>setPass(e.target.value)} />
+    <input id="pass" name="password" type="password" required placeholder="" value={pass} onChange={(e)=>setPass(e.target.value)} required />
     
-   <center> <button onClick={submitReg}>register</button>   <Link to="/"><button>Already Registered?</button></Link></center>
+   <center> <button onClick={submitReg}>Register</button>   <Link to="/"><button>Already Registered?</button></Link></center>
   </form>
     </div>
   </div>
