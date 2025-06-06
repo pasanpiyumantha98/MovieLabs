@@ -1,9 +1,31 @@
 import '../css/Login.css'
 import logo from '../assets/logo.png'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 function Signup () {
 
+  const [uname,setUname] = useState("")
+  const [pass,setPass] = useState("")
+  const [email,setEmail] = useState("")
+
+  const navigate=useNavigate()
+
+  async function submitReg(e)
+  {
+
+     e.preventDefault();
+    const response = await axios.post('http://localhost:9000/user/signup',{Username:uname,Password:pass,Email:email})
+
+    if(response.data==="ok")
+      navigate('/')
+    else 
+    alert("Somthing went wrong")
+
+
+  }
 
 
 return(
@@ -15,15 +37,15 @@ return(
     <br></br>
     <center><h3>Your personal movie manager</h3></center>
     <br></br>
-      <form action="https://example.com/support" method="POST" autocomplete="on" novalidate>
+      <form  autocomplete="on" novalidate>
     <label for="name" class="required">Username</label>
-    <input id="username" name="name" type="text"  autocomplete="name" />
+    <input id="username" name="name" type="text"  autocomplete="name" value={uname} onChange={(e)=>setUname(e.target.value)}/>
      <label for="name" class="required">Email</label>
-    <input id="username" name="name" type="text"  autocomplete="name" />
+    <input id="username" name="name" type="text"  autocomplete="name" value={email} onChange={(e)=>setEmail(e.target.value)}/>
     <label for="email" class="required">Password</label>
-    <input id="pass" name="password" type="password" required placeholder="" />
+    <input id="pass" name="password" type="password" required placeholder="" value={pass} onChange={(e)=>setPass(e.target.value)} />
     
-   <center> <button type="submit">login</button>   <Link to="/"><button>Already Registered?</button></Link></center>
+   <center> <button onClick={submitReg}>register</button>   <Link to="/"><button>Already Registered?</button></Link></center>
   </form>
     </div>
   </div>

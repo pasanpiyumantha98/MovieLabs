@@ -8,10 +8,13 @@ import NavBar from './components/NavBar'
 import { MovieProvider } from './contexts/moviecontext'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import { AuthProvider } from './contexts/authcontext'
 
 function App() {
 
   return (
+
+    <AuthProvider>
     <MovieProvider>
    
     <main className="main-content">
@@ -26,6 +29,7 @@ function App() {
     </Routes>
     </main>
     </MovieProvider>
+    </AuthProvider>
   )
 }
 

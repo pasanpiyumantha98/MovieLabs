@@ -1,26 +1,35 @@
 import '../css/Login.css'
 import logo from '../assets/logo.png'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import axios from 'axios'
+import { useAuth } from '../contexts/authcontext'
+
 
 function Login () {
 
   const [uname,setUname] = useState("")
   const [pass,setPass] = useState("")
+  const {loginn} = useAuth()
 
+  const navigate =useNavigate();
 
   async function submitLogin(e)
   {
 
      e.preventDefault();
 
-   const person = await axios.post('http://localhost:9000/user/login', {Username:uname,Password:pass})
+     const ans = await loginn(uname,pass)
 
-   if(person)
-    alert("success")
-   else
-   alert("NotOK")
+     if(ans =="OK")
+      navigate('/home')
+    else if(ans=="NOOK")
+    alert("Worng Credentials")
+    else
+     alert("Dont know")
+
+
+
+    
 
   }
 

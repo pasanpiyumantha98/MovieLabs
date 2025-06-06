@@ -1,10 +1,26 @@
 import '../css/help.css'
+import NavBar from "../components/NavBar"
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useAuth } from "../contexts/authcontext"
 
 function Help()
 {
 
+const {user} = useAuth()
+const navigate = useNavigate()
+
+useEffect(() =>{
+
+if(!user){
+  navigate("/")
+}
+
+},[user,navigate])
+
 return(
 <div class="container">
+  <NavBar/>
   <div class="row">
     <div class="helpcc">
     <h2>Need support ?</h2>

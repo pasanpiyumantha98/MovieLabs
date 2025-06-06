@@ -3,8 +3,22 @@ import { useState,useEffect } from "react"
 import '../css/home.css'
 import { PopMovies,SearchMovies } from "../services/api"
 import NavBar from "../components/NavBar"
+import {useAuth} from "../contexts/authcontext.jsx"
+import { useNavigate } from "react-router-dom"
 
 function Home () {
+
+const {user}  =useAuth()
+
+const navigate = useNavigate();
+
+useEffect(() => {
+    if (!user)
+        { navigate('/');
+        }
+  }, [user, navigate]);
+
+
 
 const [movies,SetMovies] = useState([])
 const [searchtext, setSearchtext] = useState("")     
