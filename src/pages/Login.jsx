@@ -48,9 +48,9 @@ return(
     <br></br>
       <form autocomplete="on" novalidate>
     <label for="name" class="required">Username</label>
-    <input id="username" name="name" type="text"  autocomplete="name" value={uname} onChange={(e) => setUname(e.target.value)}/>
+    <input id="username" name="name" type="text"   value={uname} onChange={(e) => setUname(e.target.value)} required/>
     <label for="email" class="required">Password</label>
-    <input id="pass" name="password" type="password" required value={pass} onChange={(p) => setPass(p.target.value)} />
+    <input id="pass" name="password" type="password"  value={pass} onChange={(p) => setPass(p.target.value)}  required/>
     
    <center> <button onClick={submitLogin}>login</button> <Link to="/signup"> <button >Not Registered?</button></Link></center>
   </form>
