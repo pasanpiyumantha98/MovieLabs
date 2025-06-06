@@ -37,7 +37,7 @@ return(
     <br></br>
     <center><h3>Your personal movie manager</h3></center>
     <br></br>
-    <p>Please enter your detailes to create the account.</p>
+    <p>&emsp;&emsp;&emsp;Please enter your detailes to create the account.</p>
     <br></br>
       <form  autocomplete="on" novalidate>
     <label for="name" class="required">Username</label>
