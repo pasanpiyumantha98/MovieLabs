@@ -44,6 +44,8 @@ return(
     <br></br>
     <center><h3>Your personal movie manager</h3></center>
     <br></br>
+    <p>&emsp;&emsp;&emsp;Please enter your detailes to login</p>
+    <br></br>
       <form autocomplete="on" novalidate>
     <label for="name" class="required">Username</label>
     <input id="username" name="name" type="text"  autocomplete="name" value={uname} onChange={(e) => setUname(e.target.value)}/>
