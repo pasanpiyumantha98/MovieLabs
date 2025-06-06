@@ -23,9 +23,9 @@ function Login () {
      if(ans =="OK")
       navigate('/home')
     else if(ans=="NOOK")
-    alert("Worng Credentials")
+    alert("Your credentials are wrong!")
     else
-     alert("Dont know")
+     alert("Something went wrong!")
 
 
 
