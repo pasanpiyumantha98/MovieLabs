@@ -37,9 +37,8 @@ return(
     
     <label for="message" class="required">Message</label>
     <textarea id="message" name="message" rows="6" required placeholder="Tell us what’s happening…"></textarea>
-    <label for="website" class="sr-only">Leave this field empty</label>
-    <input id="website" name="website" type="text" class="sr-only" tabindex="-1" autocomplete="off" />
-    <button type="submit">Send Inquiry</button>
+   
+    <button type="submit">Submit</button>
   </form>
     </div>
   </div>
