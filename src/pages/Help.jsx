@@ -27,9 +27,9 @@ return(
     <br></br>
       <form action="https://example.com/support" method="POST" autocomplete="on" novalidate>
     <label for="name" class="required">Full Name</label>
-    <input id="name" name="name" type="text" required placeholder="Jane Smith" autocomplete="name" />
+    <input id="name" name="name" type="text" required placeholder="Jane Smith" />
     <label for="email" class="required">Email Address</label>
-    <input id="email" name="email" type="email" required placeholder="jane@example.com" autocomplete="email" />
+    <input id="email" name="email" type="email" required placeholder="jane@example.com" />
     <label for="phone">Phone (optional)</label>
     <input id="phone" name="phone" type="tel" placeholder="+94 77 123 4567" autocomplete="tel" />
     <label for="subject" class="required">Subject</label>
