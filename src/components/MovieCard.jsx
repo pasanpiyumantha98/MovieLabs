@@ -21,7 +21,7 @@ function FavouriteButton (e) {
 
 async function watched (e){
 e.preventDefault()
-await axios.post('http://localhost:9000/movies/watched',{ MovieID:movie.id, Username : user.Username})
+await axios.post('http://localhost:9000/movies/watched',{ MovieId:movie.id, Username : user.Username})
 alert("Added to Watched collection")
 }
 

@@ -1,13 +1,20 @@
-
-import NavBar from "../components/NavBar"
+import '../css/Favorites.css'
+import { useMovieContext } from '../contexts/moviecontext'
+import MovieCard from '../components/MovieCard'
+import { useAuth } from '../contexts/authcontext'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from "../contexts/authcontext"
+import NavBar from "../components/NavBar"
+import axios from 'axios'
+import { useAuth } from '../contexts/authcontext'
 
-function ToWatch()
+function Watched () 
 {
+
 const {user} = useAuth()
 const navigate = useNavigate()
+
+
 
 useEffect(() =>{
 
@@ -15,15 +22,22 @@ if(!user){
   navigate("/")
 }
 
+
+
+
 },[user,navigate])
 
-return(
-<div>
-<NavBar/>
-<p>This is the page belongs to already watched movies.</p>
+const watched = axios.get('/movies/watchedlist', {Username:user.Username})
 
-</div>
+    
+return(
+   <div>
+   <NavBar/>
+ <div className="movies-grid">
+            {watched.map((movie) => (<MovieCard  movie={movie} key={movie.id}/>))}
+  </div>
+  </div>
 )
 }
 
-export default ToWatch
+export default Watched
