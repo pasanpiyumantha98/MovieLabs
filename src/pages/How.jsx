@@ -31,6 +31,7 @@ return(
           <li> Search for any movie on our platform and access informtaion.</li>
             <li> You can add any movie to your Favorites list.</li>
              <li> You can also maintain the watched list of movies.</li>
+             <li> If you are facing any error or problem, pass it to our attention.</li>
     </ul>
      
     </div>
