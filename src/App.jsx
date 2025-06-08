@@ -8,6 +8,7 @@ import NavBar from './components/NavBar'
 import { MovieProvider } from './contexts/moviecontext'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import How from './pages/How'
 import { AuthProvider } from './contexts/authcontext'
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <Route path="/support" element={<Help/>}/>
       <Route path="/" element={<Login/>}/>
        <Route path="/signup" element={<Signup/>}/>
+       <Route path="/how" element={<How/>}/>
 
     </Routes>
     </main>

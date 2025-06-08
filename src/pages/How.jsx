@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from "../contexts/authcontext"
 
-function Help()
+function How()
 {
 
 const {user} = useAuth()
@@ -46,4 +46,4 @@ return(
 )
 }
 
-export default Help
+export default How
