@@ -19,7 +19,7 @@ return(
             <Link to="/favourites">Favorites</Link>
             <Link to="/watched">Watched</Link>
             <Link to="/support">Support</Link>
-            <button onClick={logout}>Logout</button>
+            <a onClick={logout}>Logout</a>
         </div>
     </nav>
 )
