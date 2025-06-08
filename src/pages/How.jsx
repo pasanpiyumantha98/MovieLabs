@@ -25,6 +25,12 @@ return(
     <div class="helpcc">
     <h2>How Movie Labs Work?</h2>
     <br></br>
+    <ul>
+      <li>1. Create an account with MovieLabs.</li>
+        <li>2. Create an account with MovieLabs.</li>
+          <li>3. Create an account with MovieLabs.</li>
+            <li>4. Create an account with MovieLabs.</li>
+    </ul>
      
     </div>
   </div>
