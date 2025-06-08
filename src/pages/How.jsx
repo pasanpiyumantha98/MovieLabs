@@ -28,8 +28,9 @@ return(
     <ul>
       <li>1. Create an account with MovieLabs.</li>
         <li>2. Login to your account.</li>
-          <li>3. Search for any movie on our platform and access informtaion</li>
-            <li>4. You can add any movie to your Favorites list</li>
+          <li>3. Search for any movie on our platform and access informtaion.</li>
+            <li>4. You can add any movie to your Favorites list.</li>
+             <li>5. You can also maintain the watched list of movies.</li>
     </ul>
      
     </div>
