@@ -25,7 +25,7 @@ return(
     <div class="helpcc">
     <h2>Need support ?</h2>
     <br></br>
-      <form action="https://example.com/support" method="POST" autocomplete="on" novalidate>
+      <form >
     <label for="name" class="required">Full Name</label>
     <input id="name" name="name" type="text" required placeholder="Jane Smith" />
     <label for="email" class="required">Email Address</label>
