@@ -18,6 +18,7 @@ return(
             <Link to="/">Home</Link>
             <Link to="/favourites">Favorites</Link>
             <Link to="/watched">Watched</Link>
+             <Link to="/how">How It Works</Link>
             <Link to="/support">Support</Link>
             <a onClick={logout}>Logout</a>
         </div>
