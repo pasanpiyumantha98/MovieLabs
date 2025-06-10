@@ -9,7 +9,7 @@ import NavBar from "../components/NavBar"
 function Favourites () 
 {
 
-const {user} = useAuth()
+
 const navigate = useNavigate()
 const [user, setUser] = useState(null)
 
