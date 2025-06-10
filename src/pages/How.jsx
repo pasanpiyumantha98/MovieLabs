@@ -10,13 +10,14 @@ function How()
 const {user} = useAuth()
 const navigate = useNavigate()
 
-useEffect(() =>{
+useEffect(() => {
 
-if(!user){
-  navigate("/")
-}
-
-},[user,navigate])
+const user = localStorage.getItem('profile')
+setUser(user)
+    if (!user)
+        { navigate('/');
+        }
+  }, []);
 
 return(
 <div class="container">
