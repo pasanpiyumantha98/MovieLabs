@@ -7,8 +7,9 @@ import { useAuth } from "../contexts/authcontext"
 function Help()
 {
 
-const {user} = useAuth()
+
 const navigate = useNavigate()
+const [user, setUser] = useState(null)
 
 
 

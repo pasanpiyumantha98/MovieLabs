@@ -7,8 +7,8 @@ import { useAuth } from "../contexts/authcontext"
 function How()
 {
 
-const {user} = useAuth()
 const navigate = useNavigate()
+const [user, setUser] = useState(null)
 
 useEffect(() => {
 
