@@ -1,8 +1,7 @@
 import '../css/Favorites.css'
 import { useMovieContext } from '../contexts/moviecontext'
 import MovieCard from '../components/MovieCard'
-import { useAuth } from '../contexts/authcontext'
-import { useEffect } from 'react'
+import { useEffect,useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import NavBar from "../components/NavBar"
 

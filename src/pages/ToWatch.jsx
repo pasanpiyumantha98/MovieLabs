@@ -1,7 +1,6 @@
 import '../css/Favorites.css'
 import MovieCard from '../components/MovieCard'
-import { useAuth } from '../contexts/authcontext'
-import { useEffect } from 'react'
+import { useEffect,useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import NavBar from "../components/NavBar"
 import axios from 'axios'
@@ -26,7 +25,7 @@ setUser(user)
 
 useEffect(()=>{
 
-const watched = axios.get('/movies/watchedlist', {Username:user.Username})
+//const watched = axios.get('/movies/watchedlist', {Username:user.Username})
 
 },[])
 
@@ -36,7 +35,7 @@ return(
    <div>
    <NavBar/>
  <div className="movies-grid">
-        //    {watched.map((movie) => (<MovieCard  movie={movie} key={movie.id}/>))}
+            {watched.map((movie) => (<MovieCard  movie={movie} key={movie.id}/>))}
   </div>
   </div>
 )

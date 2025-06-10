@@ -1,6 +1,6 @@
 import '../css/help.css'
 import NavBar from "../components/NavBar"
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from "../contexts/authcontext"
 
