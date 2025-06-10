@@ -6,6 +6,7 @@ const AuthContext = createContext()
 export function AuthProvider ({children}) {
 
 const [user,setUser] = useState(null)
+const [bootstrapped, setBootstrapped] = useState(false);   
 
 
 //setting users if they exist in the local storage
@@ -16,18 +17,20 @@ const cached = localStorage.getItem('profile')
 if(cached)
     setUser(JSON.parse(cached))
 
+setBootstrapped(true); 
+
 },[])
 
 
 //login function
 async function loginn(uname,pass)
   {
-   const response = await axios.post('http://localhost:9000/user/login', {Username:uname,Password:pass})
+   const {data} = await axios.post('http://localhost:9000/user/login', {Username:uname,Password:pass})
 
-   if(response.data)
+   if(data)
    {
-  setUser(response.data)
-  localStorage.setItem('profile', JSON.stringify(user))
+  setUser(data)
+  localStorage.setItem('profile', JSON.stringify(data))
   return("OK")
    }
    else{
@@ -44,7 +47,7 @@ function logout ()
 
 return(
 
-    <AuthContext.Provider value={{user,loginn,logout}}>
+    <AuthContext.Provider value={{user,loginn,logout, bootstrapped}}>
         {children}
     </AuthContext.Provider>
 

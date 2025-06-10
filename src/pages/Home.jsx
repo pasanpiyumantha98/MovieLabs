@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom"
 
 function Home () {
 
-const {user}  =useAuth()
+const {user, bootstrapped}  =useAuth()
 
 const navigate = useNavigate();
 
@@ -16,7 +16,7 @@ useEffect(() => {
     if (!user)
         { navigate('/');
         }
-  }, [user, navigate]);
+  }, [bootstrapped, user, navigate]);
 
 
 
