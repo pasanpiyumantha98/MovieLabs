@@ -11,23 +11,28 @@ function ToWatch ()
 
 const [user, setUser] = useState(null)
 const navigate = useNavigate()
+const [watched,setWatched] = useState([])
 
 
 
 useEffect(() => {
 
 const user = localStorage.getItem('profile')
-setUser(user)
+
     if (!user)
         { navigate('/');
+        } else {
+          setUser(JSON.parse(user))
         }
   }, []);
 
-useEffect(()=>{
+useEffect(async ()=>{
 
-//const watched = axios.get('/movies/watchedlist', {Username:user.Username})
+const response = await axios.get(`/movies/watchedlist/${user.username}`)
 
-},[])
+setWatched(response.data)
+
+},[user])
 
 
     
@@ -35,7 +40,7 @@ return(
    <div>
    <NavBar/>
  <div className="movies-grid">
-            {watched.map((movie) => (<MovieCard  movie={movie} key={movie.id}/>))}
+            {watched.map((movie) => (<p>{movie.Title}</p>))}
   </div>
   </div>
 )
