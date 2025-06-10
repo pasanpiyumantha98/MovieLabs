@@ -12,13 +12,14 @@ function Favourites ()
 const {user} = useAuth()
 const navigate = useNavigate()
 
-useEffect(() =>{
+useEffect(() => {
 
-if(!user){
-  navigate("/")
-}
-
-},[user,navigate])
+const user = localStorage.getItem('profile')
+setUser(user)
+    if (!user)
+        { navigate('/');
+        }
+  }, []);
 
 
     const {favorites} = useMovieContext()

@@ -12,11 +12,14 @@ const navigate = useNavigate()
 
 useEffect(() =>{
 
-if(!user){
-  navigate("/")
-}
+useEffect(() => {
 
-},[user,navigate])
+const user = localStorage.getItem('profile')
+setUser(user)
+    if (!user)
+        { navigate('/');
+        }
+  }, []);
 
 return(
 <div class="container">
