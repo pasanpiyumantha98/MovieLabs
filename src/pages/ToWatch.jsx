@@ -10,7 +10,7 @@ import axios from 'axios'
 function ToWatch () 
 {
 
-const {user} = useAuth()
+const [user, setUser] = useState(null)
 const navigate = useNavigate()
 
 
