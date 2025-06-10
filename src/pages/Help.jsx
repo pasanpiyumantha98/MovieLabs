@@ -10,7 +10,7 @@ function Help()
 const {user} = useAuth()
 const navigate = useNavigate()
 
-useEffect(() =>{
+
 
 useEffect(() => {
 
@@ -19,7 +19,7 @@ setUser(user)
     if (!user)
         { navigate('/');
         }
-  }, []);
+  }, [])
 
 return(
 <div class="container">
