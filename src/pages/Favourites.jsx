@@ -11,6 +11,7 @@ function Favourites ()
 
 const {user} = useAuth()
 const navigate = useNavigate()
+const [user, setUser] = useState(null)
 
 useEffect(() => {
 
@@ -19,7 +20,7 @@ setUser(user)
     if (!user)
         { navigate('/');
         }
-  }, []);
+  }, [])
 
 
     const {favorites} = useMovieContext()
