@@ -15,12 +15,14 @@ const navigate = useNavigate()
 
 
 
-useEffect(() =>{
+useEffect(() => {
 
-if(!user){
-  navigate("/")
-}
-},[user,navigate])
+const user = localStorage.getItem('profile')
+setUser(user)
+    if (!user)
+        { navigate('/');
+        }
+  }, []);
 
 useEffect(()=>{
 
@@ -34,7 +36,7 @@ return(
    <div>
    <NavBar/>
  <div className="movies-grid">
-      
+        //    {watched.map((movie) => (<MovieCard  movie={movie} key={movie.id}/>))}
   </div>
   </div>
 )
