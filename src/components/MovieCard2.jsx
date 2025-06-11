@@ -13,17 +13,18 @@ const {isFavorite, addToFavorites, removeFromFavorites} = useMovieContext()
 
 const favorites = isFavorite(movie.id)
 
-function FavouriteButton (e) {
+async function remove (e) {
     e.preventDefault()
-    if(favorites) removeFromFavorites(movie.id)
-        else addToFavorites(movie)
+   const response = await axios.post('http://localhost:9000/movies/fav',{ MovieId:movie.id,Poster:movie.poster_path,Title:movie.title,Release:movie.release_date, Username : user.Username})
+
+   if(response.data=="ok") {
+alert("Added to Favorites collection")
+} else {
+    alert("Already added!")
+}
 }
 
-async function watched (e){
-e.preventDefault()
-await axios.post('http://localhost:9000/movies/watched',{ MovieId:movie.id,Poster:movie.poster_path,Title:movie.title,Release:movie.release_date, Username : user.Username})
-alert("Added to Watched collection")
-}
+
 
 return(
 <div className="movie-card">
@@ -31,7 +32,7 @@ return(
     
     <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
     <div className="movie-overlay">
-        <button className={`favorite-btn ${favorites ? "active" : ""}`} onClick={FavouriteButton}>♡</button>
+        
         
     </div>
 </div>
