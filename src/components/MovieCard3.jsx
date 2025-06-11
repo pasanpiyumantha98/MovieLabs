@@ -3,12 +3,15 @@ import { useMovieContext } from '../contexts/moviecontext'
 import axios from 'axios'
 import { useAuth } from '../contexts/authcontext'
 import { useState,useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 function MovieCard3 ({movie}) {
 
 
 const [user,setUser]=useState(null);
+
+const navigate = useNavigate()
 
 
 useEffect(() => {
@@ -22,12 +25,14 @@ setUser(user1)
 
 async function Remove (e){
 e.preventDefault()
-const response = await axios.get(`http://localhost:9000/movies/fav/remove/pp/${movie.id}`)
+const response = await axios.get(`http://localhost:9000/movies/fav/remove/${user.Username}/${movie.Movie}`)
 
 if(response.data=="ok") {
 alert("Removed from favorites collection!")
+window.location.reload();
 } else {
     alert("Coud not remove")
+    
 }
 }
 
@@ -44,7 +49,6 @@ return(
 </div>
 <div className="movie-info">
     <h3>{movie.title}</h3>
-    <h3>{movie.id}</h3>
     <p>{movie.release_date}</p>
     <button onClick={Remove}>Remove</button>
     

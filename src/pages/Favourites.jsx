@@ -49,7 +49,7 @@ return(
  <div className="movies-grid">
            {Array.isArray(fav) && fav.length > 0 ? (
     fav.map(movie => (
-     <MovieCard3  movie={movie} key={movie.id}/>
+     <MovieCard3  movie={movie} key={fav.Movie}/>
     ))
   ) : (
     <p>No movies in your list yet.</p>

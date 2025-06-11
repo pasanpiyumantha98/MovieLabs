@@ -13,14 +13,16 @@ const {isFavorite, addToFavorites, removeFromFavorites} = useMovieContext()
 
 const favorites = isFavorite(movie.id)
 
-async function remove (e) {
-    e.preventDefault()
-   const response = await axios.post('http://localhost:9000/movies/fav',{ MovieId:movie.id,Poster:movie.poster_path,Title:movie.title,Release:movie.release_date, Username : user.Username})
+async function Remove (e){
+e.preventDefault()
+const response = await axios.get(`http://localhost:9000/movies/wat/remove/${user.Username}/${movie.Movie}`)
 
-   if(response.data=="ok") {
-alert("Added to Favorites collection")
+if(response.data=="ok") {
+alert("Removed from Watched collection!")
+window.location.reload();
 } else {
-    alert("Already added!")
+    alert("Coud not remove")
+    
 }
 }
 
@@ -39,7 +41,7 @@ return(
 <div className="movie-info">
     <h3>{movie.title}</h3>
     <p>{movie.release_date}</p>
-    <button>Remove</button>
+    <button onClick={Remove}>Remove</button>
 </div>
 </div>
 )
