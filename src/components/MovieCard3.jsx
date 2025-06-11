@@ -22,7 +22,7 @@ setUser(user1)
 
 async function Remove (e){
 e.preventDefault()
-const response = await axios.get(`http://localhost:9000/movies/fav/remove/${user.Username}/870028`)
+const response = await axios.get(`http://localhost:9000/movies/fav/remove/pp/${movie.id}`)
 
 if(response.data=="ok") {
 alert("Removed from favorites collection!")
@@ -44,6 +44,7 @@ return(
 </div>
 <div className="movie-info">
     <h3>{movie.title}</h3>
+    <h3>{movie.id}</h3>
     <p>{movie.release_date}</p>
     <button onClick={Remove}>Remove</button>
     
