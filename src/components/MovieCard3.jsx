@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useAuth } from '../contexts/authcontext'
 
 
-function MovieCard ({movie}) {
+function MovieCard3 ({movie}) {
 
 
 const {user} = useAuth()    
@@ -43,13 +43,14 @@ return(
     
     <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}/>
     <div className="movie-overlay">
-        <button className={`favorite-btn ${favorites ? "active" : ""}`} onClick={FavouriteButton}>♡</button>
+       
          <button className={`watched-btn ${favorites ? "active" : ""}`} onClick={watched}>✔</button>
     </div>
 </div>
 <div className="movie-info">
     <h3>{movie.title}</h3>
     <p>{movie.release_date}</p>
+    <button>Remove</button>
     
 </div>
 </div>
@@ -57,4 +58,4 @@ return(
 
 }
 
-export default MovieCard
+export default MovieCard3

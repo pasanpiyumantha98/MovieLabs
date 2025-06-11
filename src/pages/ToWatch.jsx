@@ -4,12 +4,13 @@ import { useEffect,useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import NavBar from "../components/NavBar"
 import axios from 'axios'
+import MovieCard2 from '../components/MovieCard2'
 
 
 function ToWatch () 
 {
 
-const [user, setUser] = useState(null)
+const [user, setUser] = useState("")
 const navigate = useNavigate()
 const [watched,setWatched] = useState([])
 
@@ -17,21 +18,24 @@ const [watched,setWatched] = useState([])
 
 useEffect(() => {
 
-const user = localStorage.getItem('profile')
+const user = JSON.parse(localStorage.getItem('profile'))
 
     if (!user)
         { navigate('/');
         } else {
-          setUser(JSON.parse(user))
+          setUser(user)
         }
   }, []);
 
-useEffect(async ()=>{
+useEffect( ()=>{
+  if (!user) return;  
 
-const response = await axios.get(`/movies/watchedlist/${user.username}`)
+async function fetchData() {
+const response = await axios.get(`http://localhost:9000/movies/watchedList/${user.Username}`)
 
 setWatched(response.data)
-
+  }
+  fetchData();
 },[user])
 
 
@@ -39,9 +43,18 @@ setWatched(response.data)
 return(
    <div>
    <NavBar/>
- <div className="movies-grid">
-            {watched.map((movie) => (<p>{movie.Title}</p>))}
-  </div>
+   <br></br><br></br>
+   <center><h1>Watched Movies</h1></center>
+<div className="movies-grid">
+  
+  {Array.isArray(watched) && watched.length > 0 ? (
+    watched.map(movie => (
+     <MovieCard2  movie={movie} key={movie.id}/>
+    ))
+  ) : (
+    <p>No movies in your list yet.</p>
+  )}
+</div>
   </div>
 )
 }
