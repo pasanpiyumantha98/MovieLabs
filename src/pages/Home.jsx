@@ -69,7 +69,9 @@ async function FormSubmit (e){
 return(
     
     <div className="home">
+        
         <NavBar/>
+        <br></br>
         <form onSubmit={FormSubmit} className="search-form">
             <input type="text" value={searchtext} onChange={(e)=> setSearchtext(e.target.value)} className="search-input" placeholder="Search for movies"></input>
             <button type="submit" className="search-button">Search</button>

@@ -39,6 +39,7 @@ function logout ()
 {
     setUser(null)
     localStorage.removeItem('profile')
+    window.location.reload()
 }
 
 return(

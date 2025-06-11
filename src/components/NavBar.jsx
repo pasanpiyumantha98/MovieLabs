@@ -11,7 +11,7 @@ function NavBar ()
 return(
     <nav className="navbar">
         <div className="navbar-brand">
-            <Link to="/"><img src={logo}/></Link>
+            <Link to="/home"><img src={logo}/></Link>
         </div>
         <div className="navbar-links">
            
