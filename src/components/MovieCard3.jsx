@@ -2,14 +2,13 @@ import '../css/MovieCard.css'
 import { useMovieContext } from '../contexts/moviecontext'
 import axios from 'axios'
 import { useAuth } from '../contexts/authcontext'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 
 
 function MovieCard3 ({movie}) {
 
-const {isFavorite, addToFavorites, removeFromFavorites} = useMovieContext()
 
-const [user,setUser]=useState();
+const [user,setUser]=useState(null);
 
 
 useEffect(() => {
@@ -23,12 +22,12 @@ setUser(user1)
 
 async function Remove (e){
 e.preventDefault()
-const response = await axios.get(`http://localhost:9000/movies/fav/remove/${user.Username}/${movie.id}`)
+const response = await axios.get(`http://localhost:9000/movies/fav/remove/${user.Username}/870028`)
 
-if(response.data=="OK") {
-alert("Added to Watched collection!")
+if(response.data=="ok") {
+alert("Removed from favorites collection!")
 } else {
-    alert("Already added!")
+    alert("Coud not remove")
 }
 }
 
